@@ -108,10 +108,10 @@
       to { transform: translateY(0); opacity: 1; }
     }
     .modal-thumb {
-      width: 320px;
-      max-width: 80vw;
+      width: 100%;
+      max-width: 600px;
       height: auto;
-      max-height: 320px;
+      max-height: 80vh;
       background: #e0e0e0;
       margin: 0 auto 18px auto;
       display: flex;
@@ -120,6 +120,18 @@
       font-size: 1.3em;
       color: #888;
       border-radius: 6px;
+      overflow: hidden;
+    }
+    .modal-thumb img {
+      display: block;
+      margin: auto;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 6px;
+      background: #fff;
     }
     @media (max-width: 600px) {
       .container {
@@ -135,10 +147,9 @@
         min-width: 0;
       }
       .design-thumb {
-        height: 48vw; /* 画面幅に応じて高さを可変に */
+        height: 48vw;
         max-height: 180px;
         min-height: 80px;
-        /* 画像のはみ出し防止 */
         overflow: hidden;
       }
       .design-thumb img {
@@ -149,6 +160,7 @@
         object-fit: contain;
         display: block;
         margin: auto;
+        border-radius: 6px;
       }
       .modal-content {
         min-width: 0;
@@ -157,16 +169,20 @@
       .modal-thumb {
         width: 100%;
         max-width: 100vw;
-        max-height: 180px;
+        max-height: 60vh;
+        min-height: 80px;
+        height: auto;
+        overflow: hidden;
       }
       .modal-thumb img {
         max-width: 100%;
-        max-height: 100%;
+        max-height: 60vh;
         width: auto;
         height: auto;
         object-fit: contain;
         display: block;
         margin: auto;
+        border-radius: 6px;
       }
     }
     @media (max-width: 400px) {
@@ -216,7 +232,7 @@
   <div class="modal-content" id="modalContent">
     <button class="modal-close" id="modalCloseBtn" aria-label="閉じる" style="position:absolute;top:8px;right:8px;width:32px;height:32px;border:none;background:#f0f0f0;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#666;">&times;</button>
     <div class="modal-thumb" id="modalThumb">
-      <img id="modalImg" src="" alt="" style="width:100%;height:100%;max-width:320px;max-height:320px;object-fit:contain;display:block;margin:auto;border-radius:6px;">
+      <img id="modalImg" src="" alt="">
     </div>
     <div class="modal-title" id="modalTitle"></div>
     <div class="modal-desc" id="modalDesc"></div>
